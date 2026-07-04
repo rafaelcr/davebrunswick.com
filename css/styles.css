@@ -64,6 +64,7 @@ a {
 }
 
 .container {
+  width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 24px;
@@ -197,6 +198,17 @@ a {
   background: var(--color-charcoal);
 }
 
+.page-interior .site-header {
+  background: var(--color-bone);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.page-interior .logo,
+.page-interior .main-nav a,
+.page-interior .nav-toggle span {
+  color: var(--color-charcoal);
+}
+
 /* ===== Hero ===== */
 .hero {
   min-height: 100vh;
@@ -205,12 +217,18 @@ a {
   background: var(--color-charcoal);
   background-image: linear-gradient(rgba(43, 43, 43, 0.55), rgba(43, 43, 43, 0.75)), url('../assets/images/dave-hero.jpg');
   background-size: cover;
-  background-position: top center;
+  background-position: left center;
   color: var(--color-bone);
 }
 
 .hero-inner {
   max-width: 640px;
+  margin-left: auto;
+}
+
+.hero .eyebrow {
+  color: var(--color-bone);
+  opacity: 0.85;
 }
 
 .hero h1 {
@@ -299,17 +317,86 @@ a {
   color: var(--color-clay);
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-track {
+  flex: 1;
+  display: flex;
   gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track .service-card {
+  flex: 0 0 calc((100% - 64px) / 3);
+  scroll-snap-align: start;
+}
+
+.carousel-arrow {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-stone);
+  background: var(--color-bone);
+  color: var(--color-charcoal);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  border-color: var(--color-clay);
+  color: var(--color-clay);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-stone);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.carousel-dot.active {
+  opacity: 1;
+  background: var(--color-clay);
 }
 
 .service-card {
+  display: block;
   background: var(--color-bone);
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 28px;
+  cursor: pointer;
   transition: transform 0.25s ease;
 }
 
@@ -341,12 +428,142 @@ a {
   margin: 0 24px 16px;
 }
 
-.service-price {
+.service-meta {
   display: block;
   margin: 0 24px;
   font-size: 0.85rem;
   letter-spacing: 0.05em;
   color: var(--color-clay);
+}
+
+/* ===== Servicio (detalle) ===== */
+.service-hero-detail {
+  padding: 160px 0 60px;
+  background: var(--color-greige);
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin-bottom: 20px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.service-hero-detail h1 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-top: 8px;
+  max-width: 720px;
+}
+
+.service-detail-body {
+  padding: 100px 0;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.service-detail-image img {
+  border-radius: 4px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  width: 100%;
+}
+
+.service-lede {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.service-detail-content p {
+  color: var(--color-charcoal);
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--color-charcoal);
+}
+
+.service-features li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  color: var(--color-clay);
+}
+
+.service-meta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--color-stone);
+  border-radius: 4px;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+
+.service-meta-box span {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+.service-meta-box strong {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-charcoal);
+  display: block;
+  margin-top: 2px;
+}
+
+.service-tier {
+  padding: 80px 0;
+}
+
+.service-tier:not(:first-child) {
+  border-top: 1px solid var(--color-stone);
+}
+
+.service-tier-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-clay);
+  margin-bottom: 8px;
+}
+
+.service-tier h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 32px;
 }
 
 /* ===== Contacto ===== */
@@ -437,16 +654,21 @@ a {
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .about-inner,
-  .contact-inner {
+  .contact-inner,
+  .service-detail-grid {
     grid-template-columns: 1fr;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr 1fr;
+  .carousel-track .service-card {
+    flex: 0 0 calc((100% - 32px) / 2);
   }
 
   .hero h1 {
     font-size: 2.3rem;
+  }
+
+  .service-hero-detail h1 {
+    font-size: 2rem;
   }
 }
 
@@ -481,8 +703,13 @@ a {
     font-size: 1rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .carousel-track .service-card {
+    flex: 0 0 85%;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
   }
 
   .hero h1 {
@@ -491,7 +718,13 @@ a {
 
   .about,
   .services,
-  .contact {
+  .contact,
+  .service-detail-body,
+  .service-tier {
     padding: 80px 0;
+  }
+
+  .service-hero-detail {
+    padding: 120px 0 40px;
   }
 }

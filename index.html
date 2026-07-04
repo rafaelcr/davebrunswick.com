@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dave Brunswick · Asesoría de imagen</title>
-<meta name="description" content="Asesoría de imagen personal: styling, armario funcional y consultoría de estilo.">
+<meta name="description" content="Asesoría de imagen personal para hombres: styling, armario funcional y consultoría de estilo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -33,13 +33,15 @@
 
   <!-- ===== INICIO ===== -->
   <section id="inicio" class="hero">
-    <div class="container hero-inner">
-      <p class="eyebrow">Asesoría de imagen personal</p>
-      <h1>Encuentra tu <span>mejor versión</span> a través del estilo</h1>
-      <p class="hero-subtitle">
-        [Aquí va una frase corta que resuma la propuesta de valor: a quién ayudas y cómo. Ej: "Te ayudo a construir un armario funcional y a vestir con confianza, sin perder tu esencia."]
-      </p>
-      <a href="#contacto" class="btn btn-primary">Agenda tu asesoría</a>
+    <div class="container">
+      <div class="hero-inner">
+        <p class="eyebrow">Asesoría de imagen personal para hombres</p>
+        <h1>Encuentra tu <span>mejor versión</span> a través del estilo</h1>
+        <p class="hero-subtitle">
+          [Aquí va una frase corta que resuma la propuesta de valor: a quién ayudas y cómo. Ej: "Te ayudo a construir un armario funcional y a vestir con confianza, sin perder tu esencia."]
+        </p>
+        <a href="#contacto" class="btn btn-primary">Agenda tu asesoría</a>
+      </div>
     </div>
   </section>
 
@@ -72,36 +74,53 @@
       <p class="eyebrow center">Servicios</p>
       <h2 class="section-title center">Cómo puedo ayudarte</h2>
 
-      <div class="services-grid">
+      <div class="carousel" id="services-carousel">
+        <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Servicio anterior">&#8592;</button>
 
-        <article class="service-card">
-          <div class="service-image">
-            <img src="assets/images/dave-servicio-styling-diario.jpg" alt="Styling para el diario">
-          </div>
-          <h3>Styling para el diario</h3>
-          <p>[Descripción breve del servicio: en qué consiste, duración aproximada y qué obtiene la clienta al final.]</p>
-          <span class="service-price">[Desde $XXX]</span>
-        </article>
+        <div class="carousel-track" id="carousel-track">
 
-        <article class="service-card">
-          <div class="service-image">
-            <img src="assets/images/dave-servicio-closet-funcional.jpg" alt="Closet funcional">
-          </div>
-          <h3>Closet funcional</h3>
-          <p>[Descripción breve del servicio: en qué consiste, duración aproximada y qué obtiene la clienta al final.]</p>
-          <span class="service-price">[Desde $XXX]</span>
-        </article>
+          <a class="service-card" href="servicios/personal-styling.html">
+            <div class="service-image">
+              <img src="assets/images/dave-servicio-closet-funcional.jpg" alt="Personal Styling">
+            </div>
+            <h3>Personal Styling</h3>
+            <p>Outfits 100% personalizados a partir de una sesión virtual, pensados según tu tipo de cuerpo, colorimetría y estilo. Incluye una ronda de cambios tras la entrega.</p>
+            <span class="service-meta">Virtual · Lookbook personalizado</span>
+          </a>
 
-        <article class="service-card">
-          <div class="service-image">
-            <img src="assets/images/dave-servicio-asesoria-virtual.jpg" alt="Asesoría de imagen virtual">
-          </div>
-          <h3>Asesoría virtual</h3>
-          <p>[Descripción breve del servicio: en qué consiste, duración aproximada y qué obtiene la clienta al final.]</p>
-          <span class="service-price">[Desde $XXX]</span>
-        </article>
+          <a class="service-card" href="servicios/personal-shopping-styling.html">
+            <div class="service-image">
+              <img src="assets/images/dave-servicio-styling-diario.jpg" alt="Personal Shopping & Styling">
+            </div>
+            <h3>Personal Shopping &amp; Styling</h3>
+            <p>Sesión de compras en tienda para elegir con intención: fits, colores, telas y combinaciones. Incluye diagnóstico previo, lookbook de 20 outfits y stylebook.</p>
+            <span class="service-meta">Virtual y presencial · Lookbook + Stylebook</span>
+          </a>
 
+          <a class="service-card" href="servicios/closet-styling.html">
+            <div class="service-image">
+              <img src="assets/images/dave-perfil.jpg" alt="Closet Styling">
+            </div>
+            <h3>Closet Styling</h3>
+            <p>Aprovecha al máximo lo que ya tienes. Identifico los básicos que faltan y creo 20 outfits personalizados con ligas de compra a tu ritmo.</p>
+            <span class="service-meta">Virtual · Closetbook + Lookbook</span>
+          </a>
+
+          <a class="service-card" href="servicios/executive-styling.html">
+            <div class="service-image">
+              <img src="assets/images/dave-servicio-asesoria-virtual.jpg" alt="Executive Styling">
+            </div>
+            <h3>Executive Styling</h3>
+            <p>Imagen ejecutiva integral en tres niveles: desde una guía de estilo hasta shopping acompañado, grooming y sastrería a medida.</p>
+            <span class="service-meta">3 paquetes · Virtual o presencial</span>
+          </a>
+
+        </div>
+
+        <button class="carousel-arrow carousel-next" id="carousel-next" aria-label="Siguiente servicio">&#8594;</button>
       </div>
+
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
   </section>
 
@@ -121,7 +140,7 @@
       </div>
 
       <div class="contact-cta">
-        <p class="contact-cta-text">¿Lista para empezar? Escríbeme directo por WhatsApp y coordinamos tu asesoría.</p>
+        <p class="contact-cta-text">¿Listo para empezar? Escríbeme directo por WhatsApp y coordinamos tu asesoría.</p>
         <a href="https://wa.me/528120721229" target="_blank" rel="noopener" class="btn btn-primary btn-whatsapp">Escríbeme por WhatsApp</a>
       </div>
     </div>
