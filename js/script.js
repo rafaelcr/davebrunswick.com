@@ -31,28 +31,54 @@ if (carousel) {
   const dotsContainer = document.getElementById('carousel-dots');
   const cards = Array.from(track.children);
 
-  cards.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot';
-    dot.setAttribute('aria-label', `Ir al servicio ${i + 1}`);
-    dot.addEventListener('click', () => {
-      goTo(i);
-      restartAutoplay();
-    });
-    dotsContainer.appendChild(dot);
-  });
-  const dots = Array.from(dotsContainer.children);
-
+  let dots = [];
   let index = 0;
   let autoplayId = null;
   let scrollSyncTimeout = null;
+  let resizeTimeout = null;
+
+  function getVisibleCount() {
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+    if (!cardWidth) return 1;
+    const count = Math.round((track.clientWidth + gap) / (cardWidth + gap));
+    return Math.max(1, Math.min(count, cards.length));
+  }
+
+  function getMaxIndex() {
+    return Math.max(0, cards.length - getVisibleCount());
+  }
 
   function updateDots() {
     dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
   }
 
+  function updateArrows() {
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === getMaxIndex();
+  }
+
+  function buildDots() {
+    const maxIndex = getMaxIndex();
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i += 1) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('aria-label', `Ir a la página ${i + 1}`);
+      dot.addEventListener('click', () => {
+        goTo(i);
+        restartAutoplay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    dots = Array.from(dotsContainer.children);
+    index = Math.min(index, maxIndex);
+    updateDots();
+    updateArrows();
+  }
+
   function goTo(i) {
-    index = (i + cards.length) % cards.length;
+    index = Math.max(0, Math.min(i, getMaxIndex()));
     const trackRect = track.getBoundingClientRect();
     const targetRect = cards[index].getBoundingClientRect();
     track.scrollTo({
@@ -60,6 +86,7 @@ if (carousel) {
       behavior: 'smooth',
     });
     updateDots();
+    updateArrows();
   }
 
   function next() {
@@ -70,6 +97,14 @@ if (carousel) {
     goTo(index - 1);
   }
 
+  function autoplayTick() {
+    if (index >= getMaxIndex()) {
+      goTo(0);
+    } else {
+      next();
+    }
+  }
+
   function stopAutoplay() {
     clearInterval(autoplayId);
     autoplayId = null;
@@ -77,7 +112,7 @@ if (carousel) {
 
   function startAutoplay() {
     stopAutoplay();
-    autoplayId = setInterval(next, 4500);
+    autoplayId = setInterval(autoplayTick, 4500);
   }
 
   function restartAutoplay() {
@@ -118,9 +153,15 @@ if (carousel) {
       });
       index = closest;
       updateDots();
+      updateArrows();
     }, 120);
   });
 
-  updateDots();
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(buildDots, 150);
+  });
+
+  buildDots();
   startAutoplay();
 }
