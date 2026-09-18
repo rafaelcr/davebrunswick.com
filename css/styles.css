@@ -36,7 +36,7 @@
   --font-display: 'Fraternite', 'Playfair Display', serif;
   --font-body: 'Montserrat', sans-serif;
 
-  --container-width: 1568px;
+  --container-width: 1320px;
 }
 
 * {
@@ -71,7 +71,7 @@ a {
   width: 100%;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .eyebrow {
@@ -766,6 +766,10 @@ a {
     font-size: 2.4rem;
   }
 
+  .container {
+    padding: 0 32px;
+  }
+
   .about-features {
     flex-direction: column;
     gap: 20px;
@@ -785,6 +789,10 @@ a {
 }
 
 @media (max-width: 640px) {
+  .container {
+    padding: 0 24px;
+  }
+
   .nav-toggle {
     display: flex;
   }
