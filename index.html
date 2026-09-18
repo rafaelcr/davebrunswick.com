@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dave Brunswick · Asesoría de imagen</title>
-<meta name="description" content="Asesoría de imagen personal para hombres: styling, armario funcional y consultoría de estilo.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<title>Styled by Dave · Asesoría de imagen personal</title>
+<meta name="description" content="Asesoría de imagen personal para hombres: viste con intención y proyecta quién eres.">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <header class="site-header" id="site-header">
   <div class="container header-inner">
-    <a href="#inicio" class="logo">Dave Brunswick</a>
+    <a href="#inicio" class="logo">
+      <span class="logo-line">Styled&nbsp;_</span>
+      <span class="logo-line">by Dave</span>
+    </a>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#inicio">Inicio</a>
+      <a href="#inicio" class="active">Inicio</a>
       <a href="#acerca-de">Acerca de</a>
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
@@ -35,12 +35,12 @@
   <section id="inicio" class="hero">
     <div class="container">
       <div class="hero-inner">
-        <p class="eyebrow">Asesoría de imagen personal para hombres</p>
-        <h1>Encuentra tu <span>mejor versión</span> a través del estilo</h1>
+        <p class="eyebrow">Asesoría de imagen personal</p>
+        <h1>Viste con intención<br>y proyecta quién eres.</h1>
         <p class="hero-subtitle">
-          [Aquí va una frase corta que resuma la propuesta de valor: a quién ayudas y cómo. Ej: "Te ayudo a construir un armario funcional y a vestir con confianza, sin perder tu esencia."]
+          Te ayudo a crear un estilo auténtico y funcional, alineado con tu vida y tus objetivos personales y profesionales.
         </p>
-        <a href="#contacto" class="btn btn-primary">Agenda tu asesoría</a>
+        <a href="#servicios" class="btn btn-primary">Conoce las asesorías</a>
       </div>
     </div>
   </section>
@@ -55,15 +55,21 @@
         <p class="eyebrow">Acerca de</p>
         <h2>Dave Brunswick</h2>
         <p>
-          [Biografía breve: años de experiencia, formación, filosofía de trabajo y qué la distingue como asesora de imagen.
-          Ej: "Con más de X años de experiencia como consultora de imagen, he acompañado a decenas de mujeres a redescubrir
-          su estilo personal y vestir con seguridad en cada etapa de su vida."]
+          Como asesor de imagen personal para hombres, me interesa la relación entre lo que vestimos, cómo nos sentimos y lo
+          que comunicamos. Para mí, el estilo no consiste en seguir reglas ni en construir un personaje, sino en conocerte
+          mejor y tomar decisiones que se sientan naturales. Por eso, mi forma de trabajar parte de escuchar, observar y
+          entender tu día a día.
         </p>
-        <ul class="about-stats">
-          <li><strong>[X+]</strong><span>años de experiencia</span></li>
-          <li><strong>[X+]</strong><span>clientas asesoradas</span></li>
-          <li><strong>[X]</strong><span>marcas colaboradoras</span></li>
+        <p>
+          Te ayudo a traducir tu estilo de vida y tus objetivos personales y profesionales en una imagen auténtica, funcional
+          y coherente contigo.
+        </p>
+        <ul class="about-features">
+          <li><strong>Uno a uno</strong><span>Asesoría personalizada</span></li>
+          <li><strong>Flexible</strong><span>Virtual y presencial</span></li>
+          <li><strong>Integral</strong><span>Imagen personal y ejecutiva</span></li>
         </ul>
+        <a href="#contacto" class="btn btn-primary">Agenda tu asesoría</a>
       </div>
     </div>
   </section>
@@ -72,7 +78,7 @@
   <section id="servicios" class="services">
     <div class="container">
       <p class="eyebrow center">Servicios</p>
-      <h2 class="section-title center">Cómo puedo ayudarte</h2>
+      <h2 class="section-title center">¿Cómo puedo ayudarte?</h2>
 
       <div class="carousel" id="services-carousel">
         <button class="carousel-arrow carousel-prev" id="carousel-prev" aria-label="Servicio anterior">&#8592;</button>
@@ -80,39 +86,45 @@
         <div class="carousel-track" id="carousel-track">
 
           <a class="service-card" href="servicios/personal-styling.html">
-            <div class="service-image">
-              <img src="assets/images/dave-servicio-closet-funcional.jpg" alt="Personal Styling">
-            </div>
-            <h3>Personal Styling</h3>
-            <p>Outfits 100% personalizados a partir de una sesión virtual, pensados según tu tipo de cuerpo, colorimetría y estilo. Incluye una ronda de cambios tras la entrega.</p>
-            <span class="service-meta">Virtual · Lookbook personalizado</span>
+            <h3>Personal<br>Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio es para ti si quieres vestir con más intención, tener combinaciones prácticas y proyectar mejor tu estilo sin complicarte.</p>
           </a>
 
           <a class="service-card" href="servicios/personal-shopping-styling.html">
-            <div class="service-image">
-              <img src="assets/images/dave-servicio-styling-diario.jpg" alt="Personal Shopping & Styling">
-            </div>
-            <h3>Personal Shopping &amp; Styling</h3>
-            <p>Sesión de compras en tienda para elegir con intención: fits, colores, telas y combinaciones. Incluye diagnóstico previo, lookbook de 20 outfits y stylebook.</p>
-            <span class="service-meta">Virtual y presencial · Lookbook + Stylebook</span>
+            <h3>Personal Shopping<br>&amp; Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio es para ti si buscas proyectar seguridad, optimizar tu clóset y una experiencia de compra personalizada.</p>
+          </a>
+
+          <a class="service-card" href="servicios/closet-detox-styling.html">
+            <h3>Closet Detox<br>&amp; Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio es para ti si quieres depurar tu clóset, aprovechar mejor lo que ya tienes y saber qué usar y qué hace falta comprar.</p>
           </a>
 
           <a class="service-card" href="servicios/closet-styling.html">
-            <div class="service-image">
-              <img src="assets/images/dave-perfil.jpg" alt="Closet Styling">
-            </div>
-            <h3>Closet Styling</h3>
-            <p>Aprovecha al máximo lo que ya tienes. Identifico los básicos que faltan y creo 20 outfits personalizados con ligas de compra a tu ritmo.</p>
-            <span class="service-meta">Virtual · Closetbook + Lookbook</span>
+            <h3>Closet<br>Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio es para ti si quieres construir un clóset con lo esencial, aprovechar mejor tus prendas y nuevas combinaciones que hagan más fácil vestirte cada día.</p>
           </a>
 
-          <a class="service-card" href="servicios/executive-styling.html">
-            <div class="service-image">
-              <img src="assets/images/dave-servicio-asesoria-virtual.jpg" alt="Executive Styling">
-            </div>
-            <h3>Executive Styling</h3>
-            <p>Imagen ejecutiva integral en tres niveles: desde una guía de estilo hasta shopping acompañado, grooming y sastrería a medida.</p>
-            <span class="service-meta">3 paquetes · Virtual o presencial</span>
+          <a class="service-card" href="servicios/executive-image-styling.html">
+            <h3>Executive Image<br>&amp; Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio está diseñado para ejecutivos que desean proyectar una imagen más sólida, actual y alineada a su entorno profesional.</p>
+          </a>
+
+          <a class="service-card" href="servicios/executive-shopping-styling.html">
+            <h3>Executive Shopping<br>&amp; Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Servicio para ejecutivos que buscan proyectar coherencia profesional, optimizando su clóset y comprando con intención.</p>
+          </a>
+
+          <a class="service-card" href="servicios/executive-premium-styling.html">
+            <h3>Executive Premium<br>&amp; Styling</h3>
+            <div class="service-card-rule"></div>
+            <p>Este servicio está diseñado para perfiles ejecutivos que desean trabajar su imagen de forma más completa y elevada.</p>
           </a>
 
         </div>
@@ -130,17 +142,22 @@
       <div class="contact-info">
         <p class="eyebrow">Contacto</p>
         <h2>Hablemos de tu estilo</h2>
-        <p>[Frase breve invitando a agendar una consulta o resolver dudas.]</p>
+        <p>No necesitas tenerlo todo claro para comenzar. Cuéntame qué te gustaría mejorar de tu estilo o qué objetivo quieres alcanzar, y te orientaré hacia la asesoría más adecuada para ti.</p>
 
-        <ul class="contact-links">
-          <li><a href="mailto:dave@davebrunswick.com">dave@davebrunswick.com</a></li>
-          <li><a href="https://wa.me/528120721229" target="_blank" rel="noopener">WhatsApp: +52 812 072 1229</a></li>
-          <li><a href="https://instagram.com/da.brunswick" target="_blank" rel="noopener">@da.brunswick en Instagram</a></li>
-        </ul>
+        <div class="contact-block">
+          <h3>Correo</h3>
+          <a href="mailto:dave@davebrunswick.com">dave@davebrunswick.com</a>
+        </div>
+
+        <div class="contact-block">
+          <h3>Instagram</h3>
+          <a href="https://instagram.com/da.brunswick" target="_blank" rel="noopener">@da.brunswick</a>
+        </div>
       </div>
 
       <div class="contact-cta">
-        <p class="contact-cta-text">¿Listo para empezar? Escríbeme directo por WhatsApp y coordinamos tu asesoría.</p>
+        <h2>¿Listo para empezar?</h2>
+        <p class="contact-cta-text">Escríbeme y cuéntame brevemente qué estás buscando. Te responderé personalmente para ayudarte a dar el siguiente paso.</p>
         <a href="https://wa.me/528120721229" target="_blank" rel="noopener" class="btn btn-primary btn-whatsapp">Escríbeme por WhatsApp</a>
       </div>
     </div>
@@ -150,10 +167,7 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>© <span id="year"></span> Dave Brunswick</span>
-    <div class="footer-social">
-      <a href="https://instagram.com/da.brunswick" target="_blank" rel="noopener">Instagram</a>
-    </div>
+    <span>© <span id="year"></span> Dave Brunswick.</span>
   </div>
 </footer>
 
