@@ -22,6 +22,32 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+const navSections = ['inicio', 'acerca-de', 'servicios', 'contacto']
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+
+if (navSections.length) {
+  const navLinks = Array.from(mainNav.querySelectorAll('a'));
+  const setActive = (id) => {
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+    });
+  };
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: '-45% 0px -45% 0px' }
+  );
+
+  navSections.forEach((section) => sectionObserver.observe(section));
+}
+
 const carousel = document.getElementById('services-carousel');
 
 if (carousel) {
