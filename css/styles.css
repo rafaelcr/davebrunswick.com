@@ -251,7 +251,7 @@ a {
   align-items: center;
   padding-top: 88px;
   background: var(--color-ink);
-  background-image: linear-gradient(rgba(38, 38, 39, 0.45), rgba(38, 38, 39, 0.7)), url('../assets/images/dave-hero.jpg');
+  background-image: url('../assets/images/dave-hero.jpg');
   background-size: cover;
   background-position: top center;
   color: var(--color-white);
