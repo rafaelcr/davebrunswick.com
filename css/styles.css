@@ -91,9 +91,9 @@ a {
 .section-title {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 2.6rem;
+  font-size: 3.6rem;
   letter-spacing: -0.01em;
-  margin-bottom: 56px;
+  margin-bottom: 80px;
 }
 
 .section-title.center {
@@ -291,8 +291,8 @@ a {
 
 .about-inner {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 80px;
+  grid-template-columns: 0.88fr 1fr;
+  gap: 88px;
   align-items: center;
 }
 
@@ -303,23 +303,29 @@ a {
   filter: grayscale(1);
 }
 
+.about-content > .eyebrow {
+  margin-bottom: 48px;
+}
+
 .about-content h2 {
   font-family: var(--font-display);
-  font-size: 2.6rem;
+  font-size: 3.6rem;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .about-content p {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
   color: var(--color-ink);
   font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.6;
 }
 
 .about-features {
   display: flex;
   list-style: none;
-  margin: 36px 0 40px;
+  margin: 90px 0 90px;
 }
 
 .about-features li {
@@ -355,6 +361,10 @@ a {
   color: var(--color-ink);
 }
 
+.services .eyebrow {
+  margin-bottom: 44px;
+}
+
 .carousel {
   display: flex;
   align-items: center;
@@ -384,8 +394,8 @@ a {
 
 .carousel-arrow {
   flex: 0 0 auto;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 1px solid var(--color-border);
   background: var(--color-white);
@@ -443,8 +453,8 @@ a {
   display: block;
   background: var(--color-charcoal);
   color: var(--color-white);
-  padding: 40px 32px;
-  min-height: 320px;
+  padding: 48px 40px;
+  min-height: 400px;
   cursor: pointer;
   transition: transform 0.25s ease;
 }
@@ -455,21 +465,22 @@ a {
 
 .service-card h3 {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 20px;
+  line-height: 1.25;
+  margin-bottom: 28px;
 }
 
 .service-card-rule {
-  width: 28px;
-  height: 1px;
+  width: 124px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.4);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 
 .service-card p {
-  font-size: 0.95rem;
+  font-size: 1.3rem;
+  line-height: 1.5;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.72);
 }
@@ -631,27 +642,33 @@ a {
 
 .contact-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 0.88fr;
+  gap: 88px;
+}
+
+.contact-info > .eyebrow {
+  margin-bottom: 45px;
 }
 
 .contact-info h2 {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 2.6rem;
+  font-size: 3.1rem;
   letter-spacing: -0.01em;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .contact-info > p {
   color: var(--color-ink);
   font-weight: 300;
-  margin-bottom: 40px;
-  max-width: 460px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 80px;
+  max-width: 620px;
 }
 
 .contact-block {
-  margin-bottom: 28px;
+  margin-bottom: 65px;
 }
 
 .contact-block h3 {
@@ -677,7 +694,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 24px;
   padding: 48px;
   background: var(--color-surface);
 }
@@ -685,14 +701,18 @@ a {
 .contact-cta h2 {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 2rem;
+  font-size: 3.2rem;
+  line-height: 1.2;
   letter-spacing: -0.01em;
+  margin-bottom: 40px;
 }
 
 .contact-cta-text {
   color: var(--color-muted);
-  font-size: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
   font-weight: 300;
+  margin-bottom: 90px;
 }
 
 .btn-whatsapp {
@@ -790,6 +810,34 @@ a {
     border-top: none;
     padding-top: 0;
   }
+
+  .section-title {
+    font-size: 2.6rem;
+    margin-bottom: 56px;
+  }
+
+  .about-content h2,
+  .contact-info h2 {
+    font-size: 2.6rem;
+  }
+
+  .about-content p,
+  .contact-info > p,
+  .contact-cta-text {
+    font-size: 1.15rem;
+  }
+
+  .service-card h3 {
+    font-size: 2rem;
+  }
+
+  .service-card p {
+    font-size: 1.1rem;
+  }
+
+  .contact-cta h2 {
+    font-size: 2.4rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -878,5 +926,75 @@ a {
 
   .contact-cta {
     padding: 32px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .services .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .about-content > .eyebrow,
+  .contact-info > .eyebrow {
+    margin-bottom: 24px;
+  }
+
+  .about-content h2,
+  .contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    margin-bottom: 20px;
+  }
+
+  .about-content p,
+  .contact-info > p,
+  .contact-cta-text {
+    font-size: 1rem;
+  }
+
+  .contact-info > p {
+    margin-bottom: 36px;
+  }
+
+  .about-features {
+    margin: 40px 0;
+  }
+
+  .contact-block {
+    margin-bottom: 28px;
+  }
+
+  .service-card {
+    padding: 32px 28px;
+    min-height: 320px;
+  }
+
+  .service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+  }
+
+  .service-card-rule {
+    width: 60px;
+    margin-bottom: 18px;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+  }
+
+  .contact-cta h2 {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-cta-text {
+    margin-bottom: 28px;
   }
 }
