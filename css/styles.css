@@ -493,8 +493,8 @@ a {
 
 .service-detail-layout {
   display: grid;
-  grid-template-columns: minmax(380px, 0.55fr) 1fr;
-  gap: 80px;
+  grid-template-columns: minmax(390px, 0.4fr) 1fr;
+  gap: 60px;
   align-items: start;
 }
 
@@ -522,7 +522,8 @@ a {
 
 .service-sidebar a.active {
   color: var(--color-ink);
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
   border-bottom-color: var(--color-ink);
 }
 
@@ -532,7 +533,7 @@ a {
 
 .service-panel h1 {
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-size: 100px;
   font-weight: 400;
   line-height: 1;
   margin: 0 0 46px;
@@ -547,8 +548,8 @@ a {
 
 .service-lede {
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 20px;
   color: var(--color-ink);
   line-height: 1.95;
   margin-bottom: 36px;
@@ -557,7 +558,8 @@ a {
 
 .service-panel-content p {
   color: var(--color-ink);
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 16px;
   margin-bottom: 20px;
   max-width: 720px;
 }
