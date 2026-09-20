@@ -746,12 +746,10 @@ a {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .about-inner,
-  .contact-inner {
-    grid-template-columns: 1fr;
-  }
-
+/* Below 1400px the 2-column service-detail layout doesn't have room for a
+   100px title (e.g. "Executive Shopping") without wrapping to 3 lines, so
+   it stacks to a single column much earlier than the other breakpoints. */
+@media (max-width: 1400px) {
   .service-detail-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -766,6 +764,13 @@ a {
   .service-sidebar a {
     padding: 8px 0;
     border-bottom: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
   }
 
   .carousel-track .service-card {
