@@ -36,7 +36,7 @@
   --font-display: 'Fraternite', 'Playfair Display', serif;
   --font-body: 'Montserrat', sans-serif;
 
-  --container-width: 1320px;
+  --container-width: 1400px;
 }
 
 * {
@@ -493,7 +493,7 @@ a {
 
 .service-detail-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 0.88fr) 1fr;
+  grid-template-columns: minmax(380px, 0.55fr) 1fr;
   gap: 80px;
   align-items: start;
 }
